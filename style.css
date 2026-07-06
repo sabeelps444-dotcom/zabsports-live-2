@@ -80,8 +80,8 @@ body{
 }
 
 .info-table th.table-match-title {
-    background-color: #0ebece !important;
-    color: rgb(0, 0, 0) !important;
+    background-color: #e10fb7 !important;
+    color: rgb(238, 232, 232) !important;
     font-size: 18px !important;
     font-weight: bold !important;
     text-align: center !important;
@@ -90,7 +90,7 @@ body{
 }
 
 .info-table th {
-    background-color: #28a013 !important; /* പച്ച കളർ ഇവിടെ കിടന്നോട്ടെ */
+    background-color: #1b0ad5 !important; /* പച്ച കളർ ഇവിടെ കിടന്നോട്ടെ */
     color: white !important;
     font-size: 14px;
     padding: 10px;
@@ -138,14 +138,19 @@ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 margin: 15px 0;
 }
 /* NAVBAR DESIGN */
+/* ഇത് ലൈൻ 141-ൽ പേസ്റ്റ് ചെയ്യുക */
 .navbar {
     display: flex;
-    background-color: #1a1a1a;
+    align-items: center;
+    justify-content: flex-start; /* മെനുകൾ ഇടതുവശത്തേക്ക് വരാൻ */
+    background-color: var(--nav-bg); /* വേരിയബിൾ ഉപയോഗിക്കുന്നു */
+    color: var(--nav-text);
     width: 100%;
     max-width: 550px;
     margin: 0 auto 15px auto;
-    align-items: center;
+    padding: 10px 20px;
     border-radius: 4px;
+    transition: background 0.3s;
 }
 
 .nav-home {
@@ -346,12 +351,12 @@ text-align: center;
     text-align: center;
     display: inline-block;
     transition: 0.3s;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 }
 .commentary-button:hover {
 transform: translateY(-2px);
 box-shadow: 0 6px 18px rgba(37, 99, 235, 0.4);
-background: linear-gradient(135deg, #c4c706 0%, #d1dc0f 100%);
+background: linear-gradient(135deg, #0cb4da 0%, #2584dd 100%);
 }
 /* ലൈവ് ടെക്സ്റ്റ് അലങ്കരിക്കാൻ */
 .live-status {
@@ -379,4 +384,172 @@ background: linear-gradient(135deg, #c4c706 0%, #d1dc0f 100%);
     0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7); }
     70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(255, 0, 0, 0); }
     100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 0, 0, 0); }
+}
+/* കൗണ്ട് ഡൗൺ ബോക്സ് സ്റ്റൈൽ */
+#countdown {
+    background-color: #fbcf3e; /* ബോക്സിന്റെ നിറം */
+    border: 2px solid #333;    /* ബോർഡർ */
+    padding: 20px;            /* ഉള്ളിലെ സ്പേസ് */
+    text-align: center;       /* ടെക്സ്റ്റ് നടുവിൽ വരാൻ */
+    font-size: 24px;          /* അക്ഷര വലിപ്പം */
+    font-weight: bold;        /* അക്ഷരത്തിന്റെ കട്ടി */
+    border-radius: 10px;      /* മൂലകൾ വളഞ്ഞിരിക്കാൻ */
+    margin: 20px auto;        /* സൈറ്റിൽ നടുവിൽ വരാൻ */
+    width: 80%;               /* ബോക്സിന്റെ വീതി */
+    max-width: 500px;         /* ഏറ്റവും കൂടിയ വീതി */
+}
+
+/* ടൈമറിന്റെ നിറം */
+#timer {
+    color: #e74c3c;           /* ചുവപ്പ് നിറം */
+}
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --nav-bg: #333333;       /* നാവിഗേഷൻ ബാർ നിറം */
+    --nav-text: #ffffff;      /* നാവിഗേഷൻ ബാർ ടെക്സ്റ്റ് */
+}
+
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --nav-bg: #000000;       /* ഡാർക്ക് മോഡിൽ നാവിഗേഷൻ ബാർ കറുപ്പാകും */
+    --nav-text: #cccccc;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background 0.3s, color 0.3s;
+}
+
+/* നാവിഗേഷൻ ബാറിന് ഈ വേരിയബിൾ കൊടുക്കുക */
+
+
+/* സ്വിച്ച് ഡിസൈൻ */
+.switch { 
+    position: relative; 
+    display: inline-block; 
+    width: 50px; 
+    height: 24px; 
+    margin-left: auto;
+    margin-right: 20px; /* വലതുഭാഗത്ത് കൃത്യമായി ഇരിക്കാൻ */
+}
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider { 
+    position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; 
+    background-color: #ccc; transition: .4s; border-radius: 24px; 
+}
+.slider:before { 
+    position: absolute; content: ""; height: 18px; width: 18px; left: 3px; bottom: 3px; 
+    background-color: white; transition: .4s; border-radius: 50%; 
+}
+input:checked + .slider { background-color: #2196F3; }
+input:checked + .slider:before { transform: translateX(26px); }
+/* ഡാർക്ക് മോഡ് ആകുമ്പോൾ ഈ ക്ലാസ് ബോഡിയിൽ വരും */
+body.dark-mode {
+    background-color: #121212;
+}
+
+/* ഡാർക്ക് മോഡ് ആകുമ്പോൾ മാത്രം ടെക്സ്റ്റുകൾ വെള്ളയാക്കാൻ */
+body.dark-mode * {
+    color: #ffffff !important;
+}
+.poll-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background: var(--nav-bg); /* നേരത്തെ കൊടുത്ത അതേ വേരിയബിൾ */
+    border-radius: 10px;
+    color: var(--nav-text);
+}
+
+.poll-btn {
+    width: 48%;
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    background: #ff4500; /* പോർച്ചുഗൽ ബട്ടൺ കളർ */
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.poll-btn:nth-child(4) {
+    background: #0000ff; /* ക്രോയേഷ്യ ബട്ടൺ കളർ */
+}
+
+.progress-bar-bg {
+    width: 100%;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 10px;
+    margin: 10px 0 20px 0;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    width: 0%; /* തുടക്കത്തിൽ 0% */
+    transition: width 0.5s ease-in-out;
+}
+
+.prediction-container {
+    background: var(--nav-bg);
+    padding: 30px;
+    border-radius: 15px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 700px; /* ബോക്സിന്റെ നീളം കൂട്ടാൻ ഇവിടെ മാറ്റിയാൽ മതി */
+    color: var(--nav-text);
+    text-align: center;
+}
+
+.team-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 16px;
+    margin-top: 15px; 
+}
+
+.progress-bar-bg {
+    width: 100%;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    transition: width 0.5s ease-in-out;
+}
+.instagram-button {
+     padding: 5px 15px;   
+     height: 50px;   
+    border-radius: 5px;     /* ഓവൽ ആകൃതിക്ക് */
+    font-size: 18px;         
+    min-width: 200px;        /* നീളം കൂട്ടാൻ */
+    cursor: pointer;         
+    border: none;
+    background-color: #007bff; 
+    color: white;
+    text-align: center;
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    transition: 0.3s;
+    margin-bottom: 10px;
+}
+.instagram-button:hover {
+transform: translateY(-2px);
+box-shadow: 0 6px 18px rgba(37, 99, 235, 0.4);
+background: linear-gradient(135deg, #e38ecd 0%, #db149f 100%);
+}
+.instagram-logo {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    border: 2px solid red;
 }
