@@ -1,5 +1,5 @@
 // മാച്ചിന്റെ തീയതിയും സമയവും ഇവിടെ നൽകുക
-var countDownDate = new Date("July 7, 2026 00:30:00").getTime(); 
+var countDownDate = new Date("July 9, 2026 21:30:00").getTime(); 
 
 var x = setInterval(function() {
     var now = new Date().getTime();
@@ -44,4 +44,16 @@ function vote(team) {
     
     document.getElementById("portugal-bar").style.width = pPercent + "%";
     document.getElementById("croatia-bar").style.width = cPercent + "%";
+}
+
+// പേജ് ലോഡ് ആകുമ്പോൾ 3 സെക്കൻഡിന് ശേഷം പോപ്പ് അപ്പ് വരുന്നു
+window.onload = function() {
+    
+        document.getElementById("whatsappModal").style.display = "block";
+    
+};
+
+// ക്ലോസ് ബട്ടൺ ഫംഗ്ഷൻ
+function closeModal() {
+    document.getElementById("whatsappModal").style.display = "none";
 }

@@ -496,13 +496,20 @@ body.dark-mode * {
 
 .prediction-container {
     background: var(--nav-bg);
-    padding: 30px;
+    padding: 15px;
+    box-sizing: border-box;
     border-radius: 15px;
-    margin: 20px auto;
-    width: 90%;
+    margin: 0 auto;
+    width: 95%;
     max-width: 700px; /* ബോക്സിന്റെ നീളം കൂട്ടാൻ ഇവിടെ മാറ്റിയാൽ മതി */
     color: var(--nav-text);
     text-align: center;
+    overflow: hidden;
+}
+@media (max-width: 480px) {
+    .prediction-container {
+        padding: 10px;
+    }
 }
 
 .team-label {
@@ -552,3 +559,56 @@ background: linear-gradient(135deg, #e38ecd 0%, #db149f 100%);
     margin-right: 10px;
     border: 2px solid red;
 }
+
+.refresh-button {
+    padding: 10px 30px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #193b5d; /* ഒരു ഡാർക്ക് ബ്ലൂ/ഗ്രേ ഷേഡ് */
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease; /* എല്ലാം സ്മൂത്ത് ആക്കാൻ */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* ചെറിയൊരു ഷാഡോ */
+}
+
+/* ഹോവർ ചെയ്യുമ്പോൾ കൂടുതൽ ഭംഗി നൽകാൻ */
+.refresh-button:hover {
+    background-color: #082a4b;
+    transform: scale(1.05); /* ബട്ടൺ ചെറുതായി ഒന്ന് വലുതാകും */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2); /* ഷാഡോ അല്പം കൂടും */
+}
+
+/* ക്ലിക്ക് ചെയ്യുമ്പോൾ ഉള്ള എഫക്റ്റ് */
+.refresh-button:active {
+    transform: scale(0.95); /* ക്ലിക്ക് ചെയ്യുമ്പോൾ അല്പം അമരും */
+}
+
+.modal {
+  display: none; /* തുടക്കത്തിൽ കാണിക്കണ്ട */
+  position: fixed;
+  z-index: 9999;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+.modal-content {
+  background: #25D366; /* WhatsApp നിറം */
+  color: white;
+  margin: 20% auto;
+  padding: 20px;
+  width: 80%; max-width: 300px;
+  text-align: center;
+  border-radius: 15px;
+}
+.join-btn, .close-btn {
+  padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;
+  text-decoration: none; display: inline-block; margin: 5px;
+}
+.join-btn { background: white; color: #25D366; font-weight: bold; }
+.close-btn { background: #128C7E; color: white; }
