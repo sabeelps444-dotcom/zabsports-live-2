@@ -612,3 +612,23 @@ background: linear-gradient(135deg, #e38ecd 0%, #db149f 100%);
 }
 .join-btn { background: white; color: #25D366; font-weight: bold; }
 .close-btn { background: #128C7E; color: white; }
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* ഇത് സ്ക്രീൻ സൈസ് അനുസരിച്ച് ഓട്ടോമാറ്റിക് ആയി മാറും */
+    gap: 20px;
+    padding: 20px;
+}
+
+.match-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.match-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
+}
