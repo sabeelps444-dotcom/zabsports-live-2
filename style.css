@@ -80,7 +80,7 @@ body{
 }
 
 .info-table th.table-match-title {
-    background-color: #e10fb7 !important;
+    background-color: #1bcbb1 !important;
     color: rgb(238, 232, 232) !important;
     font-size: 18px !important;
     font-weight: bold !important;
@@ -90,7 +90,7 @@ body{
 }
 
 .info-table th {
-    background-color: #1b0ad5 !important; /* പച്ച കളർ ഇവിടെ കിടന്നോട്ടെ */
+    background-color: #1c09f1 !important; /* പച്ച കളർ ഇവിടെ കിടന്നോട്ടെ */
     color: white !important;
     font-size: 14px;
     padding: 10px;
