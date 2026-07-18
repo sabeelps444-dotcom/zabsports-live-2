@@ -644,11 +644,3 @@ background: linear-gradient(135deg, #e38ecd 0%, #db149f 100%);
     word-wrap: break-word;
     margin: 20px 0;
 }
-
-/* മൊബൈൽ സ്ക്രീനിനായി മാത്രം (Media Query) */
-@media only screen and (max-width: 600px) {
-    .sub-title {
-        font-size: 24px; /* മൊബൈലിൽ ഫോണ്ട് ചെറുതാക്കുന്നു */
-        margin: 10px 0;  /* മാർജിനും കുറയ്ക്കുന്നു */
-    }
-}
