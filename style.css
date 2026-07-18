@@ -634,7 +634,7 @@ background: linear-gradient(135deg, #e38ecd 0%, #db149f 100%);
 }
 /* നിലവിലുള്ള സ്റ്റൈൽ ഇവിടെ ക്ലാസ് ആയി നൽകുക */
 .sub-title {
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Outfit', sans-serif !important;
     font-size: 42px !important;
     font-weight: 800;
     letter-spacing: -1px;
