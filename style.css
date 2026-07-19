@@ -340,13 +340,13 @@ text-align: center;
 }
 .commentary-button{
     padding: 10px 80px;      
-    border-radius: 5px;     /* ഓവൽ ആകൃതിക്ക് */
+    border-radius: 0px !important;     /* ഓവൽ ആകൃതിക്ക് */
     font-size: 18px;         
     min-width: 250px;        /* നീളം കൂട്ടാൻ */
     cursor: pointer;         
     border: none;
     background-color: #f01f07e0; 
-    color: white;
+    color: rgb(242, 230, 230);
     text-align: center;
     display: inline-block;
     transition: 0.3s;
