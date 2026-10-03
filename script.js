@@ -1,5 +1,5 @@
 // മാച്ചിന്റെ തീയതിയും സമയവും ഇവിടെ നൽകുക
-var countDownDate = new Date("July 20, 2026 00:30:00").getTime(); 
+var countDownDate = new Date("OCTOBER 03, 2026 20:00:00").getTime(); 
 
 var x = setInterval(function() {
     var now = new Date().getTime();
